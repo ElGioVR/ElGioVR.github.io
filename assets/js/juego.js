@@ -67,7 +67,7 @@ const turnoComputadora = (puntosMinimos) => {
         imgCarta.classList.add('carta');
         divCartasComputadora.append(imgCarta);
 
-        if ( puntosMinimos === 21){
+        if ( puntosMinimos === 21 ){
             alert("Gansteeeeeeee")
             break;
         }else if (puntosMinimos > 21){
@@ -75,16 +75,15 @@ const turnoComputadora = (puntosMinimos) => {
         }
 
     } while ((puntosComputadora < puntosMinimos) && (puntosComputadora <= 21) )
-    if (puntosComputadora > 21 ){
-        alert("Ganasteeeeeeee")
-    }else if (puntosComputadora === puntosMinimos){
-        alert("Empateeeee")
-    }else{
-        alert("Perdisteeeeeeeee") 
+    if(puntosComputadora > 21 ){
+        alert("Gansteeeeeeee")
+    } else if ((puntosComputadora > puntosMinimos) && (puntosComputadora <= 21)){
+        alert("Perdisteeeee")
+    } else if (puntosComputadora === puntosMinimos){
+        alert("Empateeeeeee")
     }
   
 }
-
 
 //eventos
 //<img  class="carta" src="assets/cartas/10C.png">
@@ -97,6 +96,7 @@ btnPedir.addEventListener('click', ()=> {
   imgCarta.classList.add('carta');
   divCartasjugador.append(imgCarta);
   if ( puntosJugador > 21){
+    alert("Perdisteeeee")
     btnPedir.disabled = true;
     btnDetener.disabled = true;
     turnoComputadora(puntosJugador);
